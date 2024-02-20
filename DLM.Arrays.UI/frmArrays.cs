@@ -7,6 +7,9 @@ namespace DLM.Arrays.UI
 
         const int NUMBER_OF_GPAS = 500;
         double[] dblGPAs = new double[NUMBER_OF_GPAS];
+
+        string[] strNames;
+        DateTime[] dates;
         public frmArrays()
         {
             InitializeComponent();
@@ -54,7 +57,25 @@ namespace DLM.Arrays.UI
             lbxInfo.Items.Add(string.Format("Max: {0:n2}", dblMax));
             lbxInfo.Items.Add(string.Format("Min: {0:n2}", dblMin));
             lbxInfo.Items.Add(string.Format("Average: {0:n2}", dblAverage));
+        }
 
+        private void DisplayContents(string[] data)
+        {
+            lbxInfo.Items.Clear();
+            for (int index = 0; index < data.Length; index++)
+            {
+                lbxInfo.Items.Add(string.Format("{0}) {1}", index + 1, data[index]));
+            }
+
+        }
+
+        private void DisplayContents(DateTime[] data)
+        {
+            lbxInfo.Items.Clear();
+            for (int index = 0; index < data.Length; index++)
+            {
+                lbxInfo.Items.Add(string.Format("{0}) {1}", index + 1, data[index].ToShortDateString()));
+            }
 
         }
 
@@ -94,6 +115,110 @@ namespace DLM.Arrays.UI
             }
         }
 
+        private void btnDisplayNames_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                lblStatus.ForeColor = Color.Blue;
+                lblStatus.Text = string.Empty;
 
+                // Make space the array for some names
+                int.TryParse(txtInfo.Text, out int numberOfNames);
+
+                if (numberOfNames == 0)
+                    throw new Exception("Please type in the number of names");
+
+                strNames = new string[numberOfNames];
+
+                Random generator = new Random();
+
+                for (int index = 0; index < numberOfNames; index++)
+                {
+                    int letter1 = generator.Next(65, 91);
+                    int letter2 = generator.Next(97, 123);
+                    int letter3 = generator.Next(97, 123);
+                    int letter4 = generator.Next(97, 123);
+
+                    strNames[index] = ((char)letter1).ToString() +
+                        ((char)letter2).ToString() +
+                        ((char)letter3).ToString() +
+                        ((char)letter4).ToString();
+                }
+
+                DisplayContents(strNames);
+            }
+            catch (Exception ex)
+            {
+                lblStatus.ForeColor = Color.Red;
+                lblStatus.Text = ex.Message;
+            }
+        }
+
+        private void btnDisplayDates_Click(object sender, EventArgs e)
+        {
+            dates = new DateTime[25];
+            int day;
+            int month;
+            int year;
+
+            try
+            {
+                Random generator = new Random();
+                lblStatus.ForeColor = Color.Blue;
+                lblStatus.Text = string.Empty;
+
+                for (int index = 0; index < dates.GetUpperBound(0) + 1; index++)
+                {
+                    day = generator.Next(1, 32);
+                    month = generator.Next(1, 13);
+                    year = generator.Next(1950, DateTime.Now.Year);
+
+                    //if its going to be a bad date, regenerate a new day
+                    while (DateTime.DaysInMonth(year, month) < day)
+                    {
+                        day = generator.Next(1, 32);
+                    }
+
+                    DateTime newDate = new DateTime(year, month, day);
+                    dates[index] = newDate;
+                }
+
+                DisplayContents(dates);
+            }
+            catch (Exception ex)
+            {
+
+                lblStatus.ForeColor = Color.Red;
+                lblStatus.Text = ex.Message;
+            }
+        }
+        private void frmArrays_Load(object sender, EventArgs e)
+        {
+
+        }
+        private void btnSortNames_Click(object sender, EventArgs e)
+        {
+            Array.Sort(strNames);
+            DisplayContents(strNames);
+        }
+
+        private void btnSortByNameDesc_Click(object sender, EventArgs e)
+        {
+            Array.Sort(strNames);
+            Array.Reverse(strNames);
+            DisplayContents(strNames);
+        }
+
+        private void btnSortGPAs_Click(object sender, EventArgs e)
+        {
+            Array.Sort(dblGPAs);
+            DisplayContents(dblGPAs);
+        }
+
+        private void btnSortDates_Click(object sender, EventArgs e)
+        {
+            Array.Sort(dates);
+            DisplayContents(dates);
+        }
     }
 }

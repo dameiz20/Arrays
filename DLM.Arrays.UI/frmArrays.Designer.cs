@@ -31,15 +31,19 @@
             btnCreate1DArray = new Button();
             btnGPAs = new Button();
             btnError = new Button();
-            button4 = new Button();
-            button5 = new Button();
-            button6 = new Button();
-            button7 = new Button();
-            button8 = new Button();
+            btnDisplayNames = new Button();
+            btnDisplayDates = new Button();
+            btnSortNames = new Button();
+            btnSortByNameDesc = new Button();
+            btnSortGPAs = new Button();
             lbxInfo = new ListBox();
             txtInfo = new TextBox();
             statusStrip1 = new StatusStrip();
             lblStatus = new ToolStripStatusLabel();
+            button1 = new Button();
+            button2 = new Button();
+            button3 = new Button();
+            btnSortDates = new Button();
             statusStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -73,50 +77,53 @@
             btnError.UseVisualStyleBackColor = true;
             btnError.Click += btnError_Click;
             // 
-            // button4
+            // btnDisplayNames
             // 
-            button4.Location = new Point(12, 120);
-            button4.Name = "button4";
-            button4.Size = new Size(150, 30);
-            button4.TabIndex = 3;
-            button4.Text = "button4";
-            button4.UseVisualStyleBackColor = true;
+            btnDisplayNames.Location = new Point(12, 120);
+            btnDisplayNames.Name = "btnDisplayNames";
+            btnDisplayNames.Size = new Size(150, 30);
+            btnDisplayNames.TabIndex = 3;
+            btnDisplayNames.Text = "Display Names";
+            btnDisplayNames.UseVisualStyleBackColor = true;
+            btnDisplayNames.Click += btnDisplayNames_Click;
             // 
-            // button5
+            // btnDisplayDates
             // 
-            button5.Location = new Point(12, 156);
-            button5.Name = "button5";
-            button5.Size = new Size(150, 30);
-            button5.TabIndex = 4;
-            button5.Text = "button5";
-            button5.UseVisualStyleBackColor = true;
+            btnDisplayDates.Location = new Point(12, 156);
+            btnDisplayDates.Name = "btnDisplayDates";
+            btnDisplayDates.Size = new Size(150, 30);
+            btnDisplayDates.TabIndex = 4;
+            btnDisplayDates.Text = "Display Dates";
+            btnDisplayDates.UseVisualStyleBackColor = true;
+            btnDisplayDates.Click += btnDisplayDates_Click;
             // 
-            // button6
+            // btnSortNames
             // 
-            button6.Location = new Point(12, 192);
-            button6.Name = "button6";
-            button6.Size = new Size(150, 30);
-            button6.TabIndex = 5;
-            button6.Text = "button6";
-            button6.UseVisualStyleBackColor = true;
+            btnSortNames.Location = new Point(12, 192);
+            btnSortNames.Name = "btnSortNames";
+            btnSortNames.Size = new Size(150, 30);
+            btnSortNames.TabIndex = 5;
+            btnSortNames.Text = "Sort Names";
+            btnSortNames.UseVisualStyleBackColor = true;
+            btnSortNames.Click += btnSortNames_Click;
             // 
-            // button7
+            // btnSortByNameDesc
             // 
-            button7.Location = new Point(12, 228);
-            button7.Name = "button7";
-            button7.Size = new Size(150, 30);
-            button7.TabIndex = 6;
-            button7.Text = "button7";
-            button7.UseVisualStyleBackColor = true;
+            btnSortByNameDesc.Location = new Point(12, 228);
+            btnSortByNameDesc.Name = "btnSortByNameDesc";
+            btnSortByNameDesc.Size = new Size(150, 30);
+            btnSortByNameDesc.TabIndex = 6;
+            btnSortByNameDesc.Text = "Sort By Name Desc";
+            btnSortByNameDesc.UseVisualStyleBackColor = true;
             // 
-            // button8
+            // btnSortGPAs
             // 
-            button8.Location = new Point(12, 264);
-            button8.Name = "button8";
-            button8.Size = new Size(150, 30);
-            button8.TabIndex = 7;
-            button8.Text = "button8";
-            button8.UseVisualStyleBackColor = true;
+            btnSortGPAs.Location = new Point(12, 264);
+            btnSortGPAs.Name = "btnSortGPAs";
+            btnSortGPAs.Size = new Size(150, 30);
+            btnSortGPAs.TabIndex = 7;
+            btnSortGPAs.Text = "Sort GPAs";
+            btnSortGPAs.UseVisualStyleBackColor = true;
             // 
             // lbxInfo
             // 
@@ -138,7 +145,7 @@
             // 
             statusStrip1.ImageScalingSize = new Size(20, 20);
             statusStrip1.Items.AddRange(new ToolStripItem[] { lblStatus });
-            statusStrip1.Location = new Point(0, 410);
+            statusStrip1.Location = new Point(0, 469);
             statusStrip1.Name = "statusStrip1";
             statusStrip1.Size = new Size(548, 22);
             statusStrip1.TabIndex = 11;
@@ -149,19 +156,60 @@
             lblStatus.Name = "lblStatus";
             lblStatus.Size = new Size(0, 16);
             // 
+            // button1
+            // 
+            button1.Location = new Point(12, 408);
+            button1.Name = "button1";
+            button1.Size = new Size(150, 30);
+            button1.TabIndex = 15;
+            button1.Text = "Sort GPAs";
+            button1.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            button2.Location = new Point(12, 372);
+            button2.Name = "button2";
+            button2.Size = new Size(150, 30);
+            button2.TabIndex = 14;
+            button2.Text = "Sort By Name Desc";
+            button2.UseVisualStyleBackColor = true;
+            // 
+            // button3
+            // 
+            button3.Location = new Point(12, 336);
+            button3.Name = "button3";
+            button3.Size = new Size(150, 30);
+            button3.TabIndex = 13;
+            button3.Text = "Sort Names";
+            button3.UseVisualStyleBackColor = true;
+            // 
+            // btnSortDates
+            // 
+            btnSortDates.Location = new Point(12, 300);
+            btnSortDates.Name = "btnSortDates";
+            btnSortDates.Size = new Size(150, 30);
+            btnSortDates.TabIndex = 12;
+            btnSortDates.Text = "Sort Dates";
+            btnSortDates.UseVisualStyleBackColor = true;
+            btnSortDates.Click += btnSortDates_Click;
+            // 
             // frmArrays
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(548, 432);
+            ClientSize = new Size(548, 491);
+            Controls.Add(button1);
+            Controls.Add(button2);
+            Controls.Add(button3);
+            Controls.Add(btnSortDates);
             Controls.Add(statusStrip1);
             Controls.Add(txtInfo);
             Controls.Add(lbxInfo);
-            Controls.Add(button8);
-            Controls.Add(button7);
-            Controls.Add(button6);
-            Controls.Add(button5);
-            Controls.Add(button4);
+            Controls.Add(btnSortGPAs);
+            Controls.Add(btnSortByNameDesc);
+            Controls.Add(btnSortNames);
+            Controls.Add(btnDisplayDates);
+            Controls.Add(btnDisplayNames);
             Controls.Add(btnError);
             Controls.Add(btnGPAs);
             Controls.Add(btnCreate1DArray);
@@ -179,14 +227,18 @@
         private Button btnCreate1DArray;
         private Button btnGPAs;
         private Button btnError;
-        private Button button4;
-        private Button button5;
-        private Button button6;
-        private Button button7;
-        private Button button8;
+        private Button btnDisplayNames;
+        private Button btnDisplayDates;
+        private Button btnSortNames;
+        private Button btnSortByNameDesc;
+        private Button btnSortGPAs;
         private ListBox lbxInfo;
         private TextBox txtInfo;
         private StatusStrip statusStrip1;
         private ToolStripStatusLabel lblStatus;
+        private Button button1;
+        private Button button2;
+        private Button button3;
+        private Button btnSortDates;
     }
 }
