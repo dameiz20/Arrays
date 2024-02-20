@@ -41,8 +41,8 @@
             statusStrip1 = new StatusStrip();
             lblStatus = new ToolStripStatusLabel();
             button1 = new Button();
-            button2 = new Button();
-            button3 = new Button();
+            btnSearch = new Button();
+            btnResize = new Button();
             btnSortDates = new Button();
             statusStrip1.SuspendLayout();
             SuspendLayout();
@@ -165,23 +165,25 @@
             button1.Text = "Sort GPAs";
             button1.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // btnSearch
             // 
-            button2.Location = new Point(12, 372);
-            button2.Name = "button2";
-            button2.Size = new Size(150, 30);
-            button2.TabIndex = 14;
-            button2.Text = "Sort By Name Desc";
-            button2.UseVisualStyleBackColor = true;
+            btnSearch.Location = new Point(12, 372);
+            btnSearch.Name = "btnSearch";
+            btnSearch.Size = new Size(150, 30);
+            btnSearch.TabIndex = 14;
+            btnSearch.Text = "Search";
+            btnSearch.UseVisualStyleBackColor = true;
+            btnSearch.Click += btnSearch_Click;
             // 
-            // button3
+            // btnResize
             // 
-            button3.Location = new Point(12, 336);
-            button3.Name = "button3";
-            button3.Size = new Size(150, 30);
-            button3.TabIndex = 13;
-            button3.Text = "Sort Names";
-            button3.UseVisualStyleBackColor = true;
+            btnResize.Location = new Point(12, 336);
+            btnResize.Name = "btnResize";
+            btnResize.Size = new Size(150, 30);
+            btnResize.TabIndex = 13;
+            btnResize.Text = "Resize";
+            btnResize.UseVisualStyleBackColor = true;
+            btnResize.Click += btnResize_Click;
             // 
             // btnSortDates
             // 
@@ -199,8 +201,8 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(548, 491);
             Controls.Add(button1);
-            Controls.Add(button2);
-            Controls.Add(button3);
+            Controls.Add(btnSearch);
+            Controls.Add(btnResize);
             Controls.Add(btnSortDates);
             Controls.Add(statusStrip1);
             Controls.Add(txtInfo);
@@ -237,8 +239,8 @@
         private StatusStrip statusStrip1;
         private ToolStripStatusLabel lblStatus;
         private Button button1;
-        private Button button2;
-        private Button button3;
+        private Button btnSearch;
+        private Button btnResize;
         private Button btnSortDates;
     }
 }

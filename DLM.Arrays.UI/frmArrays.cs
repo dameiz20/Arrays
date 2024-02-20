@@ -196,6 +196,27 @@ namespace DLM.Arrays.UI
         {
 
         }
+
+        private int[] MakeNumbers(int lowValue = 1, int highValue = 50, int numberOfValues = 25)
+        {
+            try
+            {
+                Random generator = new Random();
+                int[] newvalues = new int[numberOfValues];
+                for (int i = 0; i < numberOfValues; i++)
+                {
+                    newvalues[i] = generator.Next(lowValue, highValue + 1);
+                }
+                return newvalues;
+
+            }
+            catch (Exception ex)
+            {
+                lblStatus.ForeColor = Color.Red;
+                lblStatus.Text = ex.Message;
+                return null;
+            }
+        }
         private void btnSortNames_Click(object sender, EventArgs e)
         {
             Array.Sort(strNames);
@@ -219,6 +240,52 @@ namespace DLM.Arrays.UI
         {
             Array.Sort(dates);
             DisplayContents(dates);
+        }
+
+        private void btnResize_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int[] numbers = MakeNumbers(5, 100);
+
+                Array.Resize(ref numbers, numbers.Length + 5);
+
+                DisplayContent(numbers);
+            }
+            catch (Exception ex)
+            {
+
+                lblStatus.ForeColor = Color.Red;
+                lblStatus.Text = ex.Message;
+            }
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            int[] numbers = MakeNumbers(numberOfValues: 5);
+
+            // IMPORTANT
+            Array.Sort(numbers);
+
+            DisplayContents(numbers);
+
+            int.TryParse(txtInfo.Text, out int searchNumber);
+
+            int foundPosition = Array.BinarySearch(numbers, searchNumber);
+
+            if (foundPosition < 0)
+            {
+                // The value was not found
+                lbxInfo.Items.Add("Element should be between " + (~foundPosition).ToString() + " and "
+                    + (~foundPosition + 1).ToString());
+            }
+            else
+            {
+                // The value was found
+                lbxInfo.Items.Add("Element was found at " + foundPosition.ToString() + " : " + numbers[foundPosition].ToString());
+
+            }
+
         }
     }
 }
