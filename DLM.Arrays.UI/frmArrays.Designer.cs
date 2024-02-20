@@ -30,7 +30,7 @@
         {
             btnCreate1DArray = new Button();
             btnGPAs = new Button();
-            button3 = new Button();
+            btnError = new Button();
             button4 = new Button();
             button5 = new Button();
             button6 = new Button();
@@ -63,14 +63,15 @@
             btnGPAs.UseVisualStyleBackColor = true;
             btnGPAs.Click += btnGPAs_Click;
             // 
-            // button3
+            // btnError
             // 
-            button3.Location = new Point(12, 84);
-            button3.Name = "button3";
-            button3.Size = new Size(150, 30);
-            button3.TabIndex = 2;
-            button3.Text = "button3";
-            button3.UseVisualStyleBackColor = true;
+            btnError.Location = new Point(12, 84);
+            btnError.Name = "btnError";
+            btnError.Size = new Size(150, 30);
+            btnError.TabIndex = 2;
+            btnError.Text = "Error";
+            btnError.UseVisualStyleBackColor = true;
+            btnError.Click += btnError_Click;
             // 
             // button4
             // 
@@ -161,7 +162,7 @@
             Controls.Add(button6);
             Controls.Add(button5);
             Controls.Add(button4);
-            Controls.Add(button3);
+            Controls.Add(btnError);
             Controls.Add(btnGPAs);
             Controls.Add(btnCreate1DArray);
             Name = "frmArrays";
@@ -177,7 +178,7 @@
 
         private Button btnCreate1DArray;
         private Button btnGPAs;
-        private Button button3;
+        private Button btnError;
         private Button button4;
         private Button button5;
         private Button button6;

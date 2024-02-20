@@ -72,5 +72,28 @@ namespace DLM.Arrays.UI
             DisplayContents(dblGPAs);
 
         }
+        private void btnError_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int[] ages = new int[3];
+                ages[0] = 33;
+                ages[1] = 44;
+                ages[2] = 55;
+
+                lbxInfo.Items.Add(ages[0]);
+                lbxInfo.Items.Add(ages[1]);
+                lbxInfo.Items.Add(ages[2]);
+                lbxInfo.Items.Add(ages[3]);
+
+            }
+            catch (Exception ex)
+            {
+                lblStatus.ForeColor = Color.Red;
+                lblStatus.Text = ex.Message;
+            }
+        }
+
+
     }
 }
