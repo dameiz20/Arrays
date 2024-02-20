@@ -28,38 +28,40 @@
         /// </summary>
         private void InitializeComponent()
         {
-            button1 = new Button();
-            button2 = new Button();
+            btnCreate1DArray = new Button();
+            btnGPAs = new Button();
             button3 = new Button();
             button4 = new Button();
             button5 = new Button();
             button6 = new Button();
             button7 = new Button();
             button8 = new Button();
-            listBox1 = new ListBox();
-            textBox2 = new TextBox();
+            lbxInfo = new ListBox();
+            txtInfo = new TextBox();
             statusStrip1 = new StatusStrip();
-            toolStripStatusLabel1 = new ToolStripStatusLabel();
+            lblStatus = new ToolStripStatusLabel();
             statusStrip1.SuspendLayout();
             SuspendLayout();
             // 
-            // button1
+            // btnCreate1DArray
             // 
-            button1.Location = new Point(12, 12);
-            button1.Name = "button1";
-            button1.Size = new Size(150, 30);
-            button1.TabIndex = 0;
-            button1.Text = "button1";
-            button1.UseVisualStyleBackColor = true;
+            btnCreate1DArray.Location = new Point(12, 12);
+            btnCreate1DArray.Name = "btnCreate1DArray";
+            btnCreate1DArray.Size = new Size(150, 30);
+            btnCreate1DArray.TabIndex = 0;
+            btnCreate1DArray.Text = "Create 1D Scores";
+            btnCreate1DArray.UseVisualStyleBackColor = true;
+            btnCreate1DArray.Click += btnCreate1DArray_Click;
             // 
-            // button2
+            // btnGPAs
             // 
-            button2.Location = new Point(12, 48);
-            button2.Name = "button2";
-            button2.Size = new Size(150, 30);
-            button2.TabIndex = 1;
-            button2.Text = "button2";
-            button2.UseVisualStyleBackColor = true;
+            btnGPAs.Location = new Point(12, 48);
+            btnGPAs.Name = "btnGPAs";
+            btnGPAs.Size = new Size(150, 30);
+            btnGPAs.TabIndex = 1;
+            btnGPAs.Text = "Create 1D GPAs";
+            btnGPAs.UseVisualStyleBackColor = true;
+            btnGPAs.Click += btnGPAs_Click;
             // 
             // button3
             // 
@@ -115,37 +117,36 @@
             button8.Text = "button8";
             button8.UseVisualStyleBackColor = true;
             // 
-            // listBox1
+            // lbxInfo
             // 
-            listBox1.FormattingEnabled = true;
-            listBox1.ItemHeight = 20;
-            listBox1.Location = new Point(188, 10);
-            listBox1.Name = "listBox1";
-            listBox1.Size = new Size(271, 284);
-            listBox1.TabIndex = 8;
+            lbxInfo.FormattingEnabled = true;
+            lbxInfo.ItemHeight = 20;
+            lbxInfo.Location = new Point(188, 10);
+            lbxInfo.Name = "lbxInfo";
+            lbxInfo.Size = new Size(271, 284);
+            lbxInfo.TabIndex = 8;
             // 
-            // textBox2
+            // txtInfo
             // 
-            textBox2.Location = new Point(188, 300);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(271, 27);
-            textBox2.TabIndex = 10;
+            txtInfo.Location = new Point(188, 300);
+            txtInfo.Name = "txtInfo";
+            txtInfo.Size = new Size(271, 27);
+            txtInfo.TabIndex = 10;
             // 
             // statusStrip1
             // 
             statusStrip1.ImageScalingSize = new Size(20, 20);
-            statusStrip1.Items.AddRange(new ToolStripItem[] { toolStripStatusLabel1 });
-            statusStrip1.Location = new Point(0, 406);
+            statusStrip1.Items.AddRange(new ToolStripItem[] { lblStatus });
+            statusStrip1.Location = new Point(0, 410);
             statusStrip1.Name = "statusStrip1";
-            statusStrip1.Size = new Size(548, 26);
+            statusStrip1.Size = new Size(548, 22);
             statusStrip1.TabIndex = 11;
             statusStrip1.Text = "statusStrip1";
             // 
-            // toolStripStatusLabel1
+            // lblStatus
             // 
-            toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            toolStripStatusLabel1.Size = new Size(151, 20);
-            toolStripStatusLabel1.Text = "toolStripStatusLabel1";
+            lblStatus.Name = "lblStatus";
+            lblStatus.Size = new Size(0, 16);
             // 
             // frmArrays
             // 
@@ -153,16 +154,16 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(548, 432);
             Controls.Add(statusStrip1);
-            Controls.Add(textBox2);
-            Controls.Add(listBox1);
+            Controls.Add(txtInfo);
+            Controls.Add(lbxInfo);
             Controls.Add(button8);
             Controls.Add(button7);
             Controls.Add(button6);
             Controls.Add(button5);
             Controls.Add(button4);
             Controls.Add(button3);
-            Controls.Add(button2);
-            Controls.Add(button1);
+            Controls.Add(btnGPAs);
+            Controls.Add(btnCreate1DArray);
             Name = "frmArrays";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Arrays";
@@ -174,17 +175,17 @@
 
         #endregion
 
-        private Button button1;
-        private Button button2;
+        private Button btnCreate1DArray;
+        private Button btnGPAs;
         private Button button3;
         private Button button4;
         private Button button5;
         private Button button6;
         private Button button7;
         private Button button8;
-        private ListBox listBox1;
-        private TextBox textBox2;
+        private ListBox lbxInfo;
+        private TextBox txtInfo;
         private StatusStrip statusStrip1;
-        private ToolStripStatusLabel toolStripStatusLabel1;
+        private ToolStripStatusLabel lblStatus;
     }
 }
