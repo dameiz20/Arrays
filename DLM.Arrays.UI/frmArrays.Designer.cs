@@ -44,6 +44,10 @@
             btnSearch = new Button();
             btnResize = new Button();
             btnSortDates = new Button();
+            btnSpeak = new Button();
+            btnCreate2DFloat = new Button();
+            btnCreate2D = new Button();
+            btnPlay = new Button();
             statusStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -145,7 +149,7 @@
             // 
             statusStrip1.ImageScalingSize = new Size(20, 20);
             statusStrip1.Items.AddRange(new ToolStripItem[] { lblStatus });
-            statusStrip1.Location = new Point(0, 469);
+            statusStrip1.Location = new Point(0, 598);
             statusStrip1.Name = "statusStrip1";
             statusStrip1.Size = new Size(548, 22);
             statusStrip1.TabIndex = 11;
@@ -195,11 +199,54 @@
             btnSortDates.UseVisualStyleBackColor = true;
             btnSortDates.Click += btnSortDates_Click;
             // 
+            // btnSpeak
+            // 
+            btnSpeak.Location = new Point(12, 516);
+            btnSpeak.Name = "btnSpeak";
+            btnSpeak.Size = new Size(150, 30);
+            btnSpeak.TabIndex = 16;
+            btnSpeak.Text = "Speak";
+            btnSpeak.UseVisualStyleBackColor = true;
+            btnSpeak.Click += btnSpeak_Click;
+            // 
+            // btnCreate2DFloat
+            // 
+            btnCreate2DFloat.Location = new Point(12, 480);
+            btnCreate2DFloat.Name = "btnCreate2DFloat";
+            btnCreate2DFloat.Size = new Size(150, 30);
+            btnCreate2DFloat.TabIndex = 17;
+            btnCreate2DFloat.Text = "Create 2D Floats";
+            btnCreate2DFloat.UseVisualStyleBackColor = true;
+            // 
+            // btnCreate2D
+            // 
+            btnCreate2D.Location = new Point(12, 444);
+            btnCreate2D.Name = "btnCreate2D";
+            btnCreate2D.Size = new Size(150, 30);
+            btnCreate2D.TabIndex = 18;
+            btnCreate2D.Text = "Create 2D Ints\r\n\r\n\r\n";
+            btnCreate2D.UseVisualStyleBackColor = true;
+            btnCreate2D.Click += btnCreate2D_Click;
+            // 
+            // btnPlay
+            // 
+            btnPlay.Location = new Point(12, 552);
+            btnPlay.Name = "btnPlay";
+            btnPlay.Size = new Size(150, 30);
+            btnPlay.TabIndex = 19;
+            btnPlay.Text = "Play";
+            btnPlay.UseVisualStyleBackColor = true;
+            btnPlay.Click += btnPlay_Click;
+            // 
             // frmArrays
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(548, 491);
+            ClientSize = new Size(548, 620);
+            Controls.Add(btnPlay);
+            Controls.Add(btnCreate2D);
+            Controls.Add(btnCreate2DFloat);
+            Controls.Add(btnSpeak);
             Controls.Add(button1);
             Controls.Add(btnSearch);
             Controls.Add(btnResize);
@@ -242,5 +289,9 @@
         private Button btnSearch;
         private Button btnResize;
         private Button btnSortDates;
+        private Button btnSpeak;
+        private Button btnCreate2DFloat;
+        private Button btnCreate2D;
+        private Button btnPlay;
     }
 }
